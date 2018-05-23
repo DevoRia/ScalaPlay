@@ -8,16 +8,12 @@ import java.util
 
 import scala.beans.BeanProperty
 
-abstract class MongoDatabaseManager {
-
-  @Inject
-  @BeanProperty
-  val playMorphia: PlayMorphia = _
+abstract class MongoDatabaseManager (@Inject playMorphia: PlayMorphia){
 
   def getCollection: DBCollection = {
     playMorphia.datastore().getCollection(new Post().getClass)
   }
 
-  abstract def getList: util.List[DBObject]
+  def getList: util.List[DBObject]
 
 }

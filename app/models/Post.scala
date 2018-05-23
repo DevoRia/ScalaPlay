@@ -1,6 +1,5 @@
 package models
 
-import com.fasterxml.jackson.databind.BeanProperty
 import org.mongodb.morphia.annotations.{Entity, Id}
 import sun.util.calendar.BaseCalendar.Date
 
@@ -11,7 +10,7 @@ class Post {
 
   @Id
   @BeanProperty
-  var _id: String = _
+  var id: String = _
 
   @BeanProperty
   var author: String = _
